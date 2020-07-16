@@ -39,14 +39,14 @@ module.exports = {
       return message.channel.send(embed)
     }
     
-    if(args[0] > 200) {
-      embed.setAuthor("You will die if you reach the limit of 200 :)")
+    if(args[0] > 150) {
+      embed.setAuthor("You will die if you reach the limit of 150 :)")
       return message.channel.send(embed)
     }
     
     serverQueue.volume = args[0]
     serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100)
-    embed.setDescription(`Seted Volume to ${args[0]}`)
+    embed.setDescription(`Setted Volume to ${args[0]}`)
     embed.setThumbnail(client.user.displayAvatarURL())
     message.channel.send(embed)
     

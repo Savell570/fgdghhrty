@@ -6,7 +6,7 @@ const { TOKEN, PREFIX } = require("./config.json")
 
 //CLIENT EVENTS
 client.on("ready", () => {
-  console.log('Awesome Bot! | Bot created by 0_0')
+  console.log('Bot is ready to play songs! | Bot created by 0_0')
   client.user.setActivity("!help | Source code by 0_0#6666")
 })
 
