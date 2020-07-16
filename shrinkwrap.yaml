@@ -9,7 +9,7 @@ dependencies:
   path: 0.12.7
   simple-youtube-api: 5.2.1
   ytdl-core: 3.1.2
-  ytdl-core-discord: github.com/CTK-WARRIOR/ytdl-core-discord/fa754ad75333f9ecf1dd837809cb3d25d6977d70
+  ytdl-core-discord: github.com/ZeroDiscord/ytdl-core-discord/4dc4f176f196403272e468c616bd7ee3578c770a
 packages:
   /@discordjs/collection/0.1.5:
     dev: false
@@ -59,10 +59,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-syUgf67ZQpaJj01/tRTknkMNoBBLWJOBODF0Zm4NrXmiSuxjymFrxnTu1QVYRubhVkRcZLYZG8STTwJRdVm/WQ==
-  /@types/node/14.0.22:
+  /@types/node/14.0.23:
     dev: false
     resolution:
-      integrity: sha512-emeGcJvdiZ4Z3ohbmw93E/64jRzUHAItSHt8nF7M4TGgQTiWqFVGB8KNpLGFmUHmHLvjvBgFwVlqNcq+VuGv9g==
+      integrity: sha512-Z4U8yDAl5TFkmYsZdFPdjeMa57NOvnaf1tljHzhouaPEp7LCj2JKkejpI1ODviIAQuW4CcQmxkQ77rnLsOOoKw==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -1208,16 +1208,15 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-H2ja9W9j89TTf+LMQxo1VrdpUNCcjjHnwY6M4NmvgUaQLwNZnIoBwbch4iaT8q75trUK83PzmbihkUBd5Poyfg==
-  github.com/CTK-WARRIOR/ytdl-core-discord/fa754ad75333f9ecf1dd837809cb3d25d6977d70:
+  github.com/ZeroDiscord/ytdl-core-discord/4dc4f176f196403272e468c616bd7ee3578c770a:
     dependencies:
-      '@types/node': 14.0.22
+      '@types/node': 14.0.23
       prism-media: 1.2.2
       ytdl-core: 3.1.2
     dev: false
     name: ytdl-core-discord
     resolution:
-      registry: 'https://registry.npmjs.org/'
-      tarball: 'https://codeload.github.com/CTK-WARRIOR/ytdl-core-discord/tar.gz/fa754ad75333f9ecf1dd837809cb3d25d6977d70'
+      tarball: 'https://codeload.github.com/ZeroDiscord/ytdl-core-discord/tar.gz/4dc4f176f196403272e468c616bd7ee3578c770a'
     version: 1.2.1
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
@@ -1233,4 +1232,4 @@ specifiers:
   path: ^0.12.7
   simple-youtube-api: ^5.2.1
   ytdl-core: ^3.1.2
-  ytdl-core-discord: 'git+https://github.com/CTK-WARRIOR/ytdl-core-discord.git'
+  ytdl-core-discord: 'git+https://github.com/ZeroDiscord/ytdl-core-discord.git'
