@@ -1,7 +1,7 @@
 {
   "PREFIX": "!", 
-  "TOKEN": "NzMzMTg3MDkzMzA3NzE5NzQw.Xw_jaA.I8knyO-J54-rYvLGqIuKOl4RqAs", 
-  "YOUTUBE_API_KEY": "AIzaSyA28GF1ezuwlaJrd1fbgPbIkIn8KoLQCp8",
+  "TOKEN": "TOKEN", 
+  "YOUTUBE_API_KEY": "API KEY",
   "QUEUE_LIMIT": 0,
   "COLOR": "RED" 
 }

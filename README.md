@@ -8,3 +8,5 @@ _To set up your bot please head to config.json and paste in your bot token along
 IN CONFIG.JS DO NOT CHANGE ANY VARIABLE THE COLOR VARIABLE IS FOR THE EMBED COLOR AND EVERYTHING ELSE IS SELF EPLAINATORY JUST CHANGE THE VALUES 
 INSIDE "" TO MAKE YOUR BOT FUNCTION PROPERLY
 READ!!!!!!!!!!!!!!!!
+
+Youtube Channel:         **https://www.youtube.com/channel/UCF9E-xef9jL9QgziZRDHKKQ/**
