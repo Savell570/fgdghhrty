@@ -1,3 +1,4 @@
+
 const { MessageEmbed } = require("discord.js")
 
 const ms = require("ms")
@@ -11,7 +12,8 @@ const youtube = new YoutubeAPI(YOUTUBE_API_KEY);
 const { play } = require("../system/music.js");
 module.exports = {
   name: "play",
-  description: "Play the song and feel the music",
+  description: "Plays the requested song.",
+  emoji: "🎧",
   async execute(client, message, args) {
     let embed = new MessageEmbed()
 .setColor(COLOR);
@@ -20,7 +22,9 @@ module.exports = {
     //FIRST OF ALL WE WILL ADD ERROR MESSAGE AND PERMISSION MESSSAGE
     if (!args.length) {
       //IF AUTHOR DIDENT GIVE URL OR NAME
-      embed.setAuthor("WRONG SYNTAX : Type `play <URL> or text`")
+      embed.setTitle("Syntax Error")
+      embed.setColor(COLOR)
+      embed.setDescription("**<:err:755296679409877003> Try ``z!play`` <songname> to play a new song!**")
       return message.channel.send(embed);
     }
 
@@ -28,7 +32,7 @@ module.exports = {
         
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/")
+      embed.setTitle(" :mute: You need to be in a voice channel to execute this command, Please join a channel and try again.")
       return message.channel.send(embed);
     }
 
@@ -40,7 +44,7 @@ module.exports = {
     const urlcheck = videoPattern.test(args[0]);
 
     if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
-      embed.setAuthor("I am Unable To Play Playlist for now")
+      embed.setAuthor("⚠️Error!⚠️: Adding playlists and livestreams [experimental] queues soon! Please wait for future updates...")
       return message.channel.send(embed);
     }
 
@@ -77,7 +81,7 @@ module.exports = {
       } catch (error) {
         if (message.include === "copyright") {
           return message
-            .reply("THERE IS COPYRIGHT CONTENT IN VIDEO -_-")
+            .reply("⚠️Error!⚠️: This video contains copyrighted content!")
             .catch(console.error);
         } else {
           console.error(error);
@@ -98,7 +102,7 @@ module.exports = {
       } catch (error) {
         console.log(error)
         if(error.errors[0].domain === "usageLimits") {
-          return message.channel.send("Your YT API limit is over and it will be restored under 24 hours")
+          return message.channel.send("YoutubeAPI limit exhausted, would be restored in 24 hours")
         }
       }
     }
@@ -112,7 +116,7 @@ module.exports = {
       serverQueue.songs.push(song);
       embed.setAuthor("Added New Song To Queue", client.user.displayAvatarURL())
       embed.setDescription(`**[${song.title}](${song.url})**`)
-      embed.setThumbnail(song.thumbnail)
+      embed.setImage(song.thumbnail)
       .setFooter("Likes - " + songData.videoDetails.likes + ", Dislikes - " +  songData.videoDetails.dislikes)
       
       return serverQueue.textChannel
@@ -128,7 +132,9 @@ module.exports = {
     if (!serverQueue) {
       try {
         queueConstruct.connection = await channel.join();
+       queueConstruct.connection.voice.setDeaf(true);
         play(queueConstruct.songs[0], message);
+         
       } catch (error) {
         console.error(`Could not join voice channel: ${error}`);
         message.client.queue.delete(message.guild.id);
