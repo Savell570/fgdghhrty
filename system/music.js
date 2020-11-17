@@ -1,4 +1,4 @@
-//I WILL BE BACK AFTER 5 min
+//so bored lmao
 const ytdlDiscord = require("ytdl-core-discord");
 const { MessageEmbed } = require("discord.js")
 const { QUEUE_LIMIT, COLOR } = require("../config.json");
@@ -12,7 +12,8 @@ let embed = new MessageEmbed()
     if (!song) {
       queue.channel.leave();
       message.client.queue.delete(message.guild.id);
-      embed.setAuthor("MUSIC QUEUE IS ENDED NOW :/")
+      embed.setAuthor("Dispatcher queue ended | Opus Returned a Queue End")
+      embed.setDescription(`Ended without playing a song? DM 0_0#6666 for assistance!`)
       return queue.textChannel
         .send(embed)
         .catch(console.error);
@@ -29,7 +30,7 @@ let embed = new MessageEmbed()
       }
 
       if (error.message.includes === "copyright") {
-        return message.channel.send("THIS VIDEO CONTAINS COPYRIGHT CONTENT");
+        return message.channel.send("THIS VIDEO CONTAINS COPYRIGHTED CONTENT");
       } else {
         console.error(error);
       }
@@ -50,7 +51,7 @@ let embed = new MessageEmbed()
       .on("error", console.error);
   
     dispatcher.setVolumeLogarithmic(queue.volume / 100); //VOLUME
-embed.setAuthor("Started Playing Song", message.client.user.displayAvatarURL())
+embed.setAuthor("💿 | Started Playing Your Song", message.client.user.displayAvatarURL())
     .setDescription(`**[${song.title}](${song.url})**`)
     
     queue.textChannel
