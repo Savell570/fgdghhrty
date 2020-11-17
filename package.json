@@ -16,12 +16,12 @@
     "path": "^0.12.7",
     "simple-youtube-api": "^5.2.1",
     "ytdl-core": "^4.0.5",
-    "ytdl-core-discord": "https://github.com/CTK-WARRIOR/ytdl-core-discord",
     "@discordjs/opus": "^0.3.2",
     "genius-lyrics": "^4.0.0",
     "moment": "^2.29.1",
     "ms": "^2.1.2",
-    "node-opus": "^0.3.3"
+    "node-opus": "^0.3.3",
+    "ytdl-core-discord": "^1.2.4"
   },
   "engines": {
     "node": "12.x"
