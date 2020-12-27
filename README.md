@@ -1,4 +1,9 @@
 **This music bot was created by 0_0#6666**
+# Fixed Sun, 27th Decemeber 2020
+## Library : Discord.js
+### Library Version : v12.5.1
+### Node Version : 12.x or higher
+#### Code Version : v1.5.8
 
 _To set up your bot please head to config.json and paste in your bot token along with youtube API key!_
 
