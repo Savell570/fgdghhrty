@@ -1,4 +1,4 @@
-const ytdlDiscord = require("ytdl-core-discord");
+const ytdl = require("ytdl-core");
 const { MessageEmbed } = require("discord.js");
 const { QUEUE_LIMIT, COLOR } = require("../config.json");
 
@@ -18,7 +18,7 @@ module.exports = {
     }
 
     try {
-      var stream = await ytdlDiscord(song.url, {
+      var stream = await ytdl(song.url, {
         highWaterMark: 1 << 25
       });
     } catch (error) {
@@ -35,7 +35,7 @@ module.exports = {
     }
 
     const dispatcher = queue.connection
-      .play(stream, { type: "opus" })
+      .play(stream)
       .on("finish", () => {
         if (queue.loop) {
           let lastsong = queue.songs.shift();
@@ -58,6 +58,8 @@ module.exports = {
 
     queue.textChannel
       .send(embed)
-      .catch(err => message.channel.send("UNABLE TO PLAY SONG"));
+      .catch(err =>
+        message.channel.send("Unable to play song | Dm 0_0#6666 for assistance")
+      );
   }
 };
