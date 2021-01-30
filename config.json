@@ -1,7 +1,7 @@
 {
   "PREFIX": "!",
-  "TOKEN": "NjI5OTgyNzAxMzg1OTQxMDEz.XZhrHA.aexMicWZYkGxzC5gfqUoLKowWGQ",
-  "YOUTUBE_API_KEY": "AIzaSyDGkUE6CfKRmPW9ZmG8Dwr9Dy_ln_b39W4",
+  "TOKEN": "YOUR_TOKEN_HERE",
+  "YOUTUBE_API_KEY": "YT API KEY HERE",
   "QUEUE_LIMIT": 0,
   "COLOR": "RED",
   "inviteURL": "BOT INVITE URL"

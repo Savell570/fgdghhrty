@@ -1,10 +1,15 @@
 **This music bot was created by 0_0#6666**
-# Fixed Sun, 27th Decemeber 2020
+# Updated, Saturday, 30th January 2021
 ## Library : Discord.js
 ### Library Version : v12.5.1
 ### Node Version : 12.x or higher
 #### Code Version : v1.5.8
-
+### Update Log:
+##### • Added Thumbnail(s) as image on play and now playing command 
+##### • Updated Dependencies 
+##### • Squashed Bugs
+##### • Worked On Common Errors 
+##### • Increased Highwatermark for better ytdl stream quality!
 _To set up your bot please head to config.json and paste in your bot token along with youtube API key!_
 
 **This bot is fully customisable join https://discord.gg/8HKHXbz for support and other questions**
