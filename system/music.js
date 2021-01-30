@@ -54,7 +54,9 @@ module.exports = {
         "💿 | Started Playing Your Song",
         message.client.user.displayAvatarURL()
       )
-      .setDescription(`**[${song.title}](${song.url})**`);
+      .setDescription(`**[${song.title}](${song.url})**`)
+      .setImage(`${song.thumbnail}`)
+      .setFooter("Want a bot like this? Check Out ZeroSync Yt!");
 
     queue.textChannel
       .send(embed)

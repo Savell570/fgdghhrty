@@ -70,7 +70,7 @@ module.exports = {
           title: songData.videoDetails.title,
           url: songData.videoDetails.video_url,
           duration: songData.videoDetails.lengthSeconds,
-          thumbnail: songData.videoDetails.thumbnail.thumbnails[3].url
+          thumbnail: songData.videoDetails.thumbnails[3].url
         };
       } catch (error) {
         if (message.include === "copyright") {
@@ -90,7 +90,7 @@ module.exports = {
           title: songData.videoDetails.title,
           url: songData.videoDetails.video_url,
           duration: songData.videoDetails.lengthSeconds,
-          thumbnail: songData.videoDetails.thumbnail.thumbnails[3].url
+          thumbnail: songData.videoDetails.thumbnails[3].url
         };
       } catch (error) {
         console.log(error);
@@ -114,7 +114,7 @@ module.exports = {
         client.user.displayAvatarURL()
       );
       embed.setDescription(`**[${song.title}](${song.url})**`);
-      embed.setThumbnail(song.thumbnail);
+      embed.setImage(song.thumbnail);
 
       return serverQueue.textChannel.send(embed).catch(console.error);
     } else {
