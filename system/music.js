@@ -28,7 +28,7 @@ module.exports = {
       }
 
       if (error.message.includes === "copyright") {
-        return message.channel.send("THIS VIDEO CONTAINS COPYRIGHTED CONTENT");
+        return message.channel.send("© | Contents of this video are copyright protected.");
       } else {
         console.error(error);
       }
