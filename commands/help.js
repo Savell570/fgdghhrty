@@ -5,14 +5,16 @@ module.exports = {
   name: "help",
   description: "Get all commands name and description",
   execute(client, message, args) {
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+    function cap(command) {
+      return command.charAt(0).toUpperCase() + command.slice(1);
+    }
     let embed = new MessageEmbed()
       .setAuthor("HELP SECTION", client.user.displayAvatarURL())
       .setThumbnail(client.user.displayAvatarURL())
       .setColor(COLOR)
-      .setDescription(`These are the command ${client.user.username} Bot`);
+      .setDescription(
+        `**These are the commands for ${client.user.username} Bot**`
+      );
     let command = readdirSync("./commands");
 
     let i;
@@ -20,8 +22,8 @@ function capitalizeFirstLetter(string) {
       console.log(command[i]);
 
       const cmd = client.commands.get(command[i].replace(".js", ""));
-const x = capitalizeFirstLetter(`${cmd.name}`)
-      embed.addField(`**${x}**`, cmd.description, false);
+      const x = cap(`${cmd.name}`);
+      embed.addField(`${x}`, `\`${cmd.description}\``, false);
     }
 
     message.channel.send(embed);
