@@ -58,7 +58,9 @@ module.exports = {
       )
       .setDescription(`**[${song.title}](${song.url})**`)
       .setImage(`${song.thumbnail}`)
-      .setFooter(`${song.author} | ${song.duration}m | ${song.date}`)
+      .setFooter(
+        `Channel: ${song.author} | Duration : ${song.duration}m | Uploaded : ${song.date}`
+      )
       .setThumbnail(song.avatar);
 
     queue.textChannel

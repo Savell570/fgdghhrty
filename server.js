@@ -5,7 +5,7 @@ const client = new discord.Client({
 });
 const { readdirSync } = require("fs");
 const { join } = require("path");
-const { TOKEN, PREFIX } = require("./config.json");
+const { PREFIX } = require("./config.json");
 
 //CLIENT EVENTS
 client.on("ready", () => {
@@ -68,4 +68,4 @@ client.on("message", message => {
 });
 
 //DONT DO ANYTHING WITH THIS TOKEN lol
-client.login(TOKEN);
+client.login(process.env.TOKEN);
