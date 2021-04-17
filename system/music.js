@@ -28,7 +28,9 @@ module.exports = {
       }
 
       if (error.message.includes === "copyright") {
-        return message.channel.send("© | Contents of this video are copyright protected.");
+        return message.channel.send(
+          "© | Contents of this video are copyright protected."
+        );
       } else {
         console.error(error);
       }
@@ -56,7 +58,8 @@ module.exports = {
       )
       .setDescription(`**[${song.title}](${song.url})**`)
       .setImage(`${song.thumbnail}`)
-      .setFooter("Want a bot like this? Check Out ZeroSync Yt!");
+      .setFooter(`${song.author} | ${song.duration}m | ${song.date}`)
+      .setThumbnail(song.avatar);
 
     queue.textChannel
       .send(embed)

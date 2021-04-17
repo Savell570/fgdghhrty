@@ -1,12 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 
-const ms = require("ms");
-
-const { Util } = require("discord.js");
-const { YOUTUBE_API_KEY, QUEUE_LIMIT, COLOR } = require("../config.json");
-const ytdl = require("ytdl-core");
-const YoutubeAPI = require("simple-youtube-api");
-const youtube = new YoutubeAPI(YOUTUBE_API_KEY);
+const { QUEUE_LIMIT, COLOR } = require("../config.json");
+const ytsr = require("ytsr");
 const { play } = require("../system/music.js");
 module.exports = {
   name: "play",
@@ -18,19 +13,16 @@ module.exports = {
     if (!args.length) {
       //IF AUTHOR DIDENT GIVE URL OR NAME
       embed.setAuthor("Syntax Error");
-      embed.setDescription("Try using ``play <song name/ URL>``");
+      embed.setDescription("Try using `play <song name/ URL>`");
       return message.channel.send(embed);
     }
 
     const { channel } = message.member.voice;
 
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/");
+      embed.setAuthor(":x: You Must Join A Voice Channel");
       return message.channel.send(embed);
     }
-
-    //WE WILL ADD PERMS ERROR LATER :(
 
     const targetsong = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;
@@ -64,13 +56,18 @@ module.exports = {
 
     if (urlcheck) {
       try {
-        songData = await ytdl.getInfo(args[0]);
+        const result = await ytsr(args[0], { page: 1 });
+        songData = result.items[0];
 
         song = {
-          title: songData.videoDetails.title,
-          url: songData.videoDetails.video_url,
-          duration: songData.videoDetails.lengthSeconds,
-          thumbnail: songData.videoDetails.thumbnails[3].url
+          title: songData.title,
+          url: songData.url,
+          duration: songData.duration,
+          thumbnail: songData.bestThumbnail.url,
+          avatar: songData.author.bestAvatar.url,
+          description: songData.description,
+          author: songData.author.name,
+          date: songData.uploadedAt
         };
       } catch (error) {
         if (message.include === "copyright") {
@@ -83,14 +80,18 @@ module.exports = {
       }
     } else {
       try {
-        const result = await youtube.searchVideos(targetsong, 1);
-        songData = await ytdl.getInfo(result[0].url);
+        const result = await ytsr(targetsong, { pages: 1 });
+        songData = result.items[0];
 
         song = {
-          title: songData.videoDetails.title,
-          url: songData.videoDetails.video_url,
-          duration: songData.videoDetails.lengthSeconds,
-          thumbnail: songData.videoDetails.thumbnails[3].url
+          title: songData.title,
+          url: songData.url,
+          duration: songData.duration,
+          thumbnail: songData.bestThumbnail.url,
+          avatar: songData.author.bestAvatar.url,
+          description: songData.description,
+          author: songData.author.name,
+          date: songData.uploadedAt
         };
       } catch (error) {
         console.log(error);

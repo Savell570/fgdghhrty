@@ -10,6 +10,7 @@ dependencies:
   path: 0.12.7
   simple-youtube-api: 5.2.1
   ytdl-core: 4.5.0
+  ytsr: 3.4.1
 packages:
   /@discordjs/collection/0.1.6:
     dev: false
@@ -1154,6 +1155,14 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-e8r6skrakWNixsVlNPBMoRM1HrdW1swE97If9nenDUjF65uogYk4DvxIuqlmqRfBWKe+6aIZwqedNxUU9XLYJA==
+  /ytsr/3.4.1:
+    dependencies:
+      miniget: 4.2.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-QXW7/G8pRIjuR9OAH1QIxLVrtxZ/Lnv1KFcBFu1gyBzI2IpMAFSsREWHnQ5xRp3r1hoO1dikIWeWhy+MMxYA0A==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -1169,3 +1178,4 @@ specifiers:
   path: ^0.12.7
   simple-youtube-api: ^5.2.1
   ytdl-core: ^4.4.5
+  ytsr: ^3.4.1

@@ -29,7 +29,7 @@ module.exports = {
     }
 
     serverQueue.songs.splice(parseInt(args[0]) - 1, 1);
-    embed.setDescription("");
+    embed.setDescription("✅ | Dropped the song from queue");
     embed.setThumbnail(client.user.displayAvatarURL());
     return message.channel.send(embed);
   }

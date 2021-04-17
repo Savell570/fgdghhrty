@@ -1,8 +1,7 @@
 {
-  "PREFIX": "!",
+  "PREFIX": "!", 
   "TOKEN": "YOUR_TOKEN_HERE",
-  "YOUTUBE_API_KEY": "YT API KEY HERE",
-  "QUEUE_LIMIT": 0,
+  "QUEUE_LIMIT": 0 , 
   "COLOR": "RED",
   "inviteURL": "BOT INVITE URL"
 }
