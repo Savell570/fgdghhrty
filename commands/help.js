@@ -23,7 +23,7 @@ module.exports = {
 
       const cmd = client.commands.get(command[i].replace(".js", ""));
       const x = cap(`${cmd.name}`);
-      embed.addField(`${x}`, `\`${cmd.description}\``, false);
+      embed.addField(`${x}`, `\`${cmd.description}\``, true);
     }
 
     message.channel.send(embed);

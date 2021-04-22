@@ -43,18 +43,17 @@ client.on("message", message => {
       .slice(PREFIX.length)
       .trim()
       .split(/ +/); //removing prefix from args
-    const command = args.shift().toLowerCase();
-    if (!client.commands.has(command)) {
-      return;
-    }
-
+    const commandName = args.shift().toLowerCase();
+    const command =
+      client.commands.get(commandName) ||
+      client.commands.find(
+        cmd => cmd.aliases && cmd.aliases.includes(commandName)
+      );
+    if (!command) return;
     try {
       //TRY TO GET COMMAND AND EXECUTE
 
-      client.commands.get(command).execute(client, message, args);
-      client.commands
-        .find(cmd => cmd.aliases && cmd.aliases.includes(command))
-        .execute(client, message, args);
+      command.execute(client, message, args);
     } catch (err) {
       //IF IT CATCH ERROR
       console.log(err);

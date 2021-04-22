@@ -3,8 +3,9 @@ const { MessageEmbed } = require("discord.js");
 const { COLOR } = require("../config.json");
 
 module.exports = {
-  name: "np",
+  name: "nowplaying",
   description: "Get the name of current playing song",
+aliases: ["np"],
   execute(client, message, args) {
     let embed = new MessageEmbed().setColor(COLOR);
 

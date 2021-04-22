@@ -5,6 +5,7 @@ const { COLOR } = require("../config.json");
 module.exports = {
   name: "skip",
   description: "Skip the song or shift yourself to next song",
+aliases: ["remove"],
   async execute(client, message, args) {
     let embed = new MessageEmbed().setColor(COLOR);
 

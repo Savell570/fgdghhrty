@@ -6,6 +6,7 @@ const discord = require("discord.js");
 module.exports = {
   name: "stop",
   description: "Disconnect the bot and take some rest",
+  aliases: ["dc", "disconnect"],
   async execute(client, message, args) {
     let embed = new MessageEmbed().setColor(COLOR);
 

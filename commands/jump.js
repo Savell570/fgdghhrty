@@ -4,6 +4,7 @@ const { COLOR } = require("../config.json");
 module.exports = {
   name: "jump",
   description: "Jump to any song you like",
+aliases: ["skipto","playfrom","play"],
   execute(client, message, args) {
     let embed = new MessageEmbed().setColor(COLOR);
 
@@ -17,7 +18,7 @@ module.exports = {
     const serverQueue = message.client.queue.get(message.guild.id);
 
     if (!serverQueue) {
-      embed.setAuthor("There is nothing playing that i could loop");
+      embed.setAuthor("There is nothing playing that I could loop");
       return message.channel.send(embed);
     }
     if (!args[0]) {

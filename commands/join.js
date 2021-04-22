@@ -3,6 +3,7 @@ const { COLOR } = require("../config.json");
 module.exports = {
   name: "join",
   description: "Join a specific voice channel you are in",
+  aliases: ["join", "connect", "j"],
   async execute(client, message, args) {
     let channel = message.member.voice.channel;
     if (!channel)
