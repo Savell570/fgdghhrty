@@ -50,7 +50,11 @@ client.on("message", message => {
 
     try {
       //TRY TO GET COMMAND AND EXECUTE
+
       client.commands.get(command).execute(client, message, args);
+      client.commands
+        .find(cmd => cmd.aliases && cmd.aliases.includes(command))
+        .execute(client, message, args);
     } catch (err) {
       //IF IT CATCH ERROR
       console.log(err);
