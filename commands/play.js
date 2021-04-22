@@ -116,7 +116,12 @@ module.exports = {
       );
       embed.setDescription(`**[${song.title}](${song.url})**`);
       embed.setImage(song.thumbnail);
-
+      embed.setFooter(
+        `Channel: ${song.author} | Duration : ${song.duration}m | Uploaded : ${song.date}`
+      );
+      embed.addField(`Playing In`, `${channel}`, true);
+      embed.addField(`Bound To`, `${message.channel}`, true);
+      embed.setThumbnail(song.avatar);
       return serverQueue.textChannel.send(embed).catch(console.error);
     } else {
       queueConstruct.songs.push(song);

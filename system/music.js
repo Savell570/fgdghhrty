@@ -53,7 +53,7 @@ module.exports = {
     dispatcher.setVolumeLogarithmic(queue.volume / 100); //VOLUME
     embed
       .setAuthor(
-        "💿 | Added Your Song",
+        "💿 | Started Playing Your Song",
         message.client.user.displayAvatarURL()
       )
       .setDescription(`**[${song.title}](${song.url})**`)
@@ -61,6 +61,8 @@ module.exports = {
       .setFooter(
         `Channel: ${song.author} | Duration : ${song.duration}m | Uploaded : ${song.date}`
       )
+      .addField(`Playing In`, `${queue.channel}`, true)
+      .addField(`Bound To`, `${queue.textChannel}`, true)
       .setThumbnail(song.avatar);
 
     queue.textChannel

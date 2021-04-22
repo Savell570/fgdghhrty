@@ -11,7 +11,9 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("❌ | Need to be in a voice channel before executing this command");
+      embed.setAuthor(
+        "❌ | Need to be in a voice channel before executing this command"
+      );
       return message.channel.send(embed);
     }
 
@@ -24,8 +26,12 @@ module.exports = {
 
     embed
       .setDescription(`📀 | **Now Playing** | ${serverQueue.songs[0].title}`)
-      .setImage(serverQueue.songs[0].thumbnail)
+      .setImage(serverQueue.songs[0].thumbnail);
+    embed
+      .setThumbnail(serverQueue.songs[0].avatar)
       .setFooter("Want a bot like this? Subscribe to ZeroSync on yt!")
+      .addField(`Playing In`, `${channel}`, true)
+      .addField(`Bound To`, `${serverQueue.channel}`, true)
       .setTimestamp();
     message.channel.send(embed);
   }
