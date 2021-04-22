@@ -45,7 +45,7 @@ module.exports = {
 
     serverQueue.volume = args[0];
     serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 100);
-    embed.setDescription(`Setted Volume to ${args[0]}`);
+    embed.setDescription(`Changed the volume to **${args[0]}**`);
     embed.setThumbnail(client.user.displayAvatarURL());
     message.channel.send(embed);
   }
