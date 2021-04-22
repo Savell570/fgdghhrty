@@ -13,7 +13,7 @@ module.exports = {
     
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/")
+      embed.setAuthor("❌ | Must be in a voice channel before executing this command")
       return message.channel.send(embed);
     }
     

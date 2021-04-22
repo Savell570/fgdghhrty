@@ -20,7 +20,7 @@ module.exports = {
     const { channel } = message.member.voice;
 
     if (!channel) {
-      embed.setAuthor(":x: You Must Join A Voice Channel");
+      embed.setAuthor("❌ | You Must Join A Voice Channel");
       return message.channel.send(embed);
     }
 
@@ -30,7 +30,7 @@ module.exports = {
     const urlcheck = videoPattern.test(args[0]);
 
     if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
-      embed.setAuthor("I am Unable To Play Playlist for now");
+      embed.setAuthor("I am Unable To Play Playlists for now");
       return message.channel.send(embed);
     }
 
@@ -72,7 +72,7 @@ module.exports = {
       } catch (error) {
         if (message.include === "copyright") {
           return message
-            .reply("THERE IS COPYRIGHT CONTENT IN VIDEO -_-")
+            .reply("THERE IS COPYRIGHTED CONTENT IN VIDEO -_-")
             .catch(console.error);
         } else {
           console.error(error);

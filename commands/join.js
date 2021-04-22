@@ -4,22 +4,26 @@ module.exports = {
   name: "join",
   description: "Join a specific voice channel you are in",
   async execute(client, message, args) {
-   let channel = message.member.voice.channel;
-        if (!channel) return message.channel.send("I'm sorry but you need to be in a voice channel!", message.channel);
+    let channel = message.member.voice.channel;
+    if (!channel)
+      return message.channel.send(
+        "I'm sorry but you need to be in a voice channel!",
+        message.channel
+      );
 
-        try {
-            const connection = await channel.join();
-        } catch (error) {
-            console.error(`I could not join the voice channel: ${error}`);
-        }
+    try {
+      const connection = await channel.join();
+    } catch (error) {
+      console.error(`I could not join the voice channel: ${error}`);
+    }
 
-        const embed = new MessageEmbed()
-            .setAuthor("Joined Voice Channel")
-            .setColor("#fffdd0")
-            .setTitle(`Success`)
-            .setDescription(`🎶 Joined The Voice Channel. ${channel}.`)
-            .setTimestamp();
+    const embed = new MessageEmbed()
+      .setAuthor("Joined Voice Channel")
+      .setColor(COLOR)
+      .setTitle(`Success`)
+      .setDescription(`🎶 Joined The Voice Channel. ${channel}.`)
+      .setTimestamp();
 
-        return message.channel.send(embed);
-}
-}
+    return message.channel.send(embed);
+  }
+};

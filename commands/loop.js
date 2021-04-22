@@ -11,14 +11,14 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      embed.setAuthor("YOU NEED TO BE IN VOICE CHANNEL :/")
+      embed.setAuthor("❌ | Must be in a voice channel before executing this command")
       return message.channel.send(embed);
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);
 
     if (!serverQueue) {
-      embed.setAuthor("There is nothing playing that i could loop")
+      embed.setAuthor("There is nothing playing that I could loop")
       return message.channel.send(embed);
     }
     

@@ -53,7 +53,7 @@ module.exports = {
     dispatcher.setVolumeLogarithmic(queue.volume / 100); //VOLUME
     embed
       .setAuthor(
-        "💿 | Started Playing Your Song",
+        "💿 | Added Your Song",
         message.client.user.displayAvatarURL()
       )
       .setDescription(`**[${song.title}](${song.url})**`)

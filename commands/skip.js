@@ -11,13 +11,13 @@ module.exports = {
     const { channel } = message.member.voice;
 
     if (!channel) {
-      embed.setAuthor(":x: Must be in a Voice Channel");
+      embed.setAuthor("❌ |  Must be in a Voice Channel");
       return message.channel.send(embed);
     }
     const serverQueue = message.client.queue.get(message.guild.id);
     const vote = message.client.vote.get(message.guild.id);
     if (!serverQueue) {
-      embed.setAuthor(":x: There is nothing playing that I could skip");
+      embed.setAuthor("❌ |  There is nothing playing that I could skip");
       return message.channel.send(embed);
     }
 
