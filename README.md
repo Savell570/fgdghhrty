@@ -1,7 +1,6 @@
 **This music bot was created by 0_0#6666**
-# Updated, Saturday, 30th January 2021
-## Library : Discord.js
-### Library Version : v12.5.1
+# Updated, Thurs
+### Library Version : v12.5.3
 ### Node Version : 12.x or higher
 #### Code Version : v1.5.8
 ### Update Log:

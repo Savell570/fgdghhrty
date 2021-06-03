@@ -8,11 +8,10 @@ module.exports = {
     let embed = new MessageEmbed().setColor(COLOR);
 
     if (!song) {
-      queue.channel.leave();
       message.client.queue.delete(message.guild.id);
       embed.setAuthor("Dispatcher queue ended | Opus Returned a Queue End");
       embed.setDescription(
-        `Ended without playing a song? DM 0_0#6666 for assistance!`
+        `Ended without playing a song? DM 0_0#6666 for assistance!\n\n **Don't worry I won't leave ${queue.channel} Waiting There For More Music To Be Played!**`
       );
       return queue.textChannel.send(embed).catch(console.error);
     }
